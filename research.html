@@ -90,7 +90,8 @@
 
     .question-media.network img {
       image-rendering: auto;
-      max-width: 235px;
+      max-width: 360px;
+      width: 100%;
     }
 
     .media-stack {
@@ -139,6 +140,17 @@
 
     .method-card h3 { margin-top: 0; }
     .method-card p { color: #536176; line-height: 1.65; }
+
+
+    .question-media video {
+      width: 100%;
+      max-width: 390px;
+    }
+
+    .question-media img[src$="molecular-selectivity.png"] {
+      width: 100%;
+      max-width: 390px;
+    }
 
     @media (max-width: 900px) {
       .research-title {
@@ -224,14 +236,8 @@
         </p>
       </div>
       <div class="question-media">
-        <div class="media-stack">
-          <img src="assets/images/binding-sites.png"
-               alt="Orthosteric, allosteric, protein-protein interaction and cryptic binding sites">
-          <video autoplay muted loop playsinline preload="metadata"
-                 aria-label="Molecular dynamics trajectory illustrating protein conformational dynamics">
-            <source src="assets/images/slc612-histidine.mp4" type="video/mp4">
-          </video>
-        </div>
+        <img src="assets/images/binding-sites.png"
+             alt="Orthosteric, allosteric, protein-protein interaction and cryptic binding sites">
       </div>
     </article>
 
@@ -247,10 +253,10 @@
         </p>
       </div>
       <div class="question-media">
-        <div class="question-placeholder">
-          Suggested future figure:<br>
-          calibrated prediction + uncertainty / applicability-domain graphic
-        </div>
+        <video autoplay muted loop playsinline preload="metadata"
+               aria-label="Molecular dynamics trajectory used to examine structural behavior and prediction confidence">
+          <source src="assets/images/slc612-histidine.mp4" type="video/mp4">
+        </video>
       </div>
     </article>
 
@@ -265,10 +271,8 @@
         </p>
       </div>
       <div class="question-media">
-        <div class="question-placeholder">
-          Suggested future figure:<br>
-          promiscuous lead → molecular redesign → selective candidate
-        </div>
+        <img src="assets/images/molecular-selectivity.png"
+             alt="Molecular interaction environment illustrating features relevant to improving molecular selectivity">
       </div>
     </article>
   </section>
