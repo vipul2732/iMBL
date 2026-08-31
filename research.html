@@ -8,8 +8,164 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=4.7">
+  <link rel="stylesheet" href="assets/style.css?v=4.8">
+
+  <style>
+    /* Research-page-only refinements */
+    .research-page { max-width: 1240px; }
+
+    .research-title {
+      max-width: none !important;
+      width: 100%;
+      white-space: nowrap;
+      font-size: clamp(2.7rem, 5.2vw, 5.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 24px;
+    }
+
+    .research-intro {
+      max-width: 900px;
+      font-size: 1.18rem;
+      line-height: 1.75;
+    }
+
+    .question-section {
+      margin-top: 70px;
+    }
+
+    .question-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 56px;
+      align-items: center;
+      padding: 48px 0;
+      border-top: 1px solid #dfe5ec;
+    }
+
+    .question-row:last-child {
+      border-bottom: 1px solid #dfe5ec;
+    }
+
+    .question-num {
+      display: block;
+      margin-bottom: 14px;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      color: #66758a;
+    }
+
+    .question-copy h2 {
+      margin: 0 0 15px;
+      max-width: 720px;
+      font-size: clamp(1.65rem, 2.5vw, 2.55rem);
+      line-height: 1.2;
+    }
+
+    .question-copy p {
+      max-width: 760px;
+      margin: 0;
+      color: #536176;
+      font-size: 1.05rem;
+      line-height: 1.72;
+    }
+
+    .question-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+    }
+
+    .question-media img,
+    .question-media video {
+      display: block;
+      max-width: 100%;
+      max-height: 320px;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .question-media.network img {
+      image-rendering: auto;
+      max-width: 235px;
+    }
+
+    .media-stack {
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+    }
+
+    .media-stack video {
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .question-placeholder {
+      width: 100%;
+      min-height: 210px;
+      border: 1px dashed #cbd4df;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #7a8797;
+      background: #fafbfd;
+      font-size: .95rem;
+    }
+
+    .methods-block {
+      margin-top: 78px;
+    }
+
+    .methods-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .method-card {
+      padding: 24px;
+      border: 1px solid #dfe5ec;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .method-card h3 { margin-top: 0; }
+    .method-card p { color: #536176; line-height: 1.65; }
+
+    @media (max-width: 900px) {
+      .research-title {
+        white-space: normal;
+        font-size: clamp(2.45rem, 9vw, 4rem);
+      }
+
+      .question-row {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .question-media {
+        justify-content: flex-start;
+      }
+
+      .methods-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .methods-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
 <header>
   <a class="brand" href="index.html"><b>iMBL</b><span>In Silico Molecular<br>Biology Lab</span></a>
@@ -27,100 +183,117 @@
 
 <main class="page research-page">
   <p class="eyebrow">RESEARCH</p>
-  <h1>Decoding Drug Off-Targets</h1>
-  <p class="lead narrow">Drugs can interact with proteins beyond their intended therapeutic targets. At iMBL, we aim to understand the molecular basis of these interactions, predict potential off-target liabilities, quantify uncertainty in those predictions, and explore how this knowledge can support improved molecular selectivity and safer therapeutics.</p>
+  <h1 class="research-title">Decoding Drug Off-Targets</h1>
 
-  <!-- Central concept figure: built directly in HTML so no external image is required -->
-  <section class="team-block">
-    <div style="max-width:980px;margin:0 auto;padding:28px 20px;border:1px solid #dfe5ec;border-radius:14px;background:#fff;">
-      <div style="text-align:center;margin-bottom:24px;">
-        <div style="display:inline-block;padding:10px 22px;border-radius:999px;border:1px solid #cfd7e2;font-weight:700;">Drug / Lead Molecule</div>
-      </div>
+  <p class="lead research-intro">
+    Drugs can interact with proteins beyond their intended therapeutic targets.
+    At iMBL, we aim to understand the molecular basis of these interactions,
+    predict potential off-target liabilities, quantify uncertainty in those
+    predictions, and explore how this knowledge can support improved molecular
+    selectivity and safer therapeutics.
+  </p>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;">
-        <div style="padding:20px;border:1px solid #dfe5ec;border-radius:12px;text-align:center;">
-          <p class="eyebrow" style="margin-bottom:8px;">INTENDED TARGET</p>
-          <h3 style="margin-top:0;">Desired molecular interaction</h3>
-          <p style="color:#536176;margin-bottom:0;">Therapeutic mechanism and efficacy</p>
-        </div>
-
-        <div style="padding:20px;border:1px solid #dfe5ec;border-radius:12px;text-align:center;">
-          <p class="eyebrow" style="margin-bottom:8px;">OFF-TARGETS</p>
-          <h3 style="margin-top:0;">Unintended molecular interactions</h3>
-          <p style="color:#536176;margin-bottom:0;">Potential safety liabilities, altered response, or unexpected biology</p>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin:26px 0 10px;color:#536176;font-weight:600;">
-        Predict &nbsp;→&nbsp; Quantify uncertainty &nbsp;→&nbsp; Understand mechanism &nbsp;→&nbsp; Improve selectivity
-      </div>
-    </div>
-  </section>
-
-  <section class="team-block">
+  <section class="question-section">
     <p class="eyebrow">OUR LONG-TERM QUESTIONS</p>
-    <h2>Questions that guide iMBL</h2>
 
-    <div class="research-themes">
-      <article class="research-theme">
-        <div class="research-theme-copy">
-          <span class="theme-num">01</span>
-          <h2>Where do drugs go beyond their intended target?</h2>
-          <p>We aim to identify and prioritize plausible unintended drug–protein interactions across proteins and protein families, particularly those that may influence therapeutic safety, efficacy, or variability in response.</p>
-        </div>
-      </article>
+    <article class="question-row">
+      <div class="question-copy">
+        <span class="question-num">01</span>
+        <h2>Where do drugs go beyond their intended target?</h2>
+        <p>
+          We aim to identify and prioritize plausible unintended drug–protein
+          interactions across proteins and protein families, particularly those
+          that may influence therapeutic safety, efficacy, or variability in response.
+        </p>
+      </div>
+      <div class="question-media network">
+        <img src="assets/images/offtarget-network.png"
+             alt="Network representation of drug interactions with intended and unintended protein targets">
+      </div>
+    </article>
 
-      <article class="research-theme">
-        <div class="research-theme-copy">
-          <span class="theme-num">02</span>
-          <h2>Why do off-target interactions occur?</h2>
-          <p>We investigate the structural, chemical, and dynamic determinants that allow a molecule optimized for one target to recognize another, including binding-site similarity, conformational plasticity, molecular recognition, and the energetic basis of selectivity and promiscuity.</p>
+    <article class="question-row">
+      <div class="question-copy">
+        <span class="question-num">02</span>
+        <h2>Why do off-target interactions occur?</h2>
+        <p>
+          We investigate the structural, chemical, and dynamic determinants that
+          allow a molecule optimized for one target to recognize another, including
+          binding-site similarity, conformational plasticity, molecular recognition,
+          and the energetic basis of selectivity and promiscuity.
+        </p>
+      </div>
+      <div class="question-media">
+        <div class="media-stack">
+          <img src="assets/images/binding-sites.png"
+               alt="Orthosteric, allosteric, protein-protein interaction and cryptic binding sites">
+          <video autoplay muted loop playsinline preload="metadata"
+                 aria-label="Molecular dynamics trajectory illustrating protein conformational dynamics">
+            <source src="assets/images/slc612-histidine.mp4" type="video/mp4">
+          </video>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="research-theme">
-        <div class="research-theme-copy">
-          <span class="theme-num">03</span>
-          <h2>Which predictions can we trust?</h2>
-          <p>We develop and evaluate predictive models that explicitly consider uncertainty, probability calibration, and applicability domain, with the goal of separating confident predictions from cases where additional evidence is required.</p>
+    <article class="question-row">
+      <div class="question-copy">
+        <span class="question-num">03</span>
+        <h2>Which predictions can we trust?</h2>
+        <p>
+          We develop and evaluate predictive models that explicitly consider
+          uncertainty, probability calibration, and applicability domain, with
+          the goal of separating confident predictions from cases where additional
+          evidence is required.
+        </p>
+      </div>
+      <div class="question-media">
+        <div class="question-placeholder">
+          Suggested future figure:<br>
+          calibrated prediction + uncertainty / applicability-domain graphic
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="research-theme">
-        <div class="research-theme-copy">
-          <span class="theme-num">04</span>
-          <h2>Can we improve molecular selectivity?</h2>
-          <p>By identifying the molecular features associated with selectivity and promiscuity, we aim to support the prioritization and design of compounds with reduced off-target liability and improved therapeutic safety.</p>
+    <article class="question-row">
+      <div class="question-copy">
+        <span class="question-num">04</span>
+        <h2>Can we improve molecular selectivity?</h2>
+        <p>
+          By identifying the molecular features associated with selectivity and
+          promiscuity, we aim to support the prioritization and design of compounds
+          with reduced off-target liability and improved therapeutic safety.
+        </p>
+      </div>
+      <div class="question-media">
+        <div class="question-placeholder">
+          Suggested future figure:<br>
+          promiscuous lead → molecular redesign → selective candidate
         </div>
-      </article>
-    </div>
+      </div>
+    </article>
   </section>
 
-  <section class="team-block">
+  <section class="methods-block">
     <p class="eyebrow">HOW WE APPROACH THESE QUESTIONS</p>
     <h2>Methods that connect prediction with molecular mechanism</h2>
 
-    <div class="cards three">
-      <article>
-        <div class="num">01</div>
+    <div class="methods-grid">
+      <article class="method-card">
         <h3>Molecular modeling &amp; structural bioinformatics</h3>
         <p>Protein structures, binding-site comparison, molecular recognition, ligand–protein interactions, and structure-based hypotheses of selectivity.</p>
       </article>
 
-      <article>
-        <div class="num">02</div>
+      <article class="method-card">
         <h3>Molecular dynamics &amp; simulation</h3>
         <p>Conformational dynamics, interaction stability, mechanistic interpretation, membrane systems, and energetic characterization of molecular interactions.</p>
       </article>
 
-      <article>
-        <div class="num">03</div>
+      <article class="method-card">
         <h3>AI/ML &amp; cheminformatics</h3>
         <p>Molecular representations, chemical similarity, drug–target prediction, off-target prioritization, and data-driven modeling of molecular interactions.</p>
       </article>
 
-      <article>
-        <div class="num">04</div>
+      <article class="method-card">
         <h3>Bayesian &amp; uncertainty-aware modeling</h3>
         <p>Probabilistic prediction, uncertainty quantification, calibration, applicability-domain analysis, and decision-making under uncertainty.</p>
       </article>
